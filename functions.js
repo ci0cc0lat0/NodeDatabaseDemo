@@ -1,6 +1,5 @@
 const { Client} = require('pg')
 const creds = require('./creds.json')
-
 const client = new Client({
   host: creds.host,
   user: creds.user,
