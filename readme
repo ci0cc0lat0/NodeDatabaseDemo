@@ -1,4 +1,22 @@
-# To run the server we do node index.js in the terminal
-- This will start the server listening on port 4000
-- We can now type in the browser localhost:4000 to see the server
-- Any changes to index.html will be reflected in the browser
+To run the server, in the root directory open a terminal and run 'npx nodemon index.js'
+next, look up localhost:3000 on the browser
+
+The default table should have 5 rows
+The delete and edit buttons do nothing.
+
+if you type in 'demo' and hit 'Table select' nothing should happen on the website, but the terminal should update with a new 'select all' query
+if you type in 'test' and hit 'Table select' the  table should change to undefined and have 3 rows. Repeating the step above should return it to normal
+
+I am looking for a way to display all of the attributes in a table in the top.
+Later this will be reduced down to the attributes we, the user want to search for.
+
+The way main.js and index.js work is through passing request and responses to each other.
+Main.js activates on client input and talks to the server ( the server started with 'npx nodemon index.js' ) and does actions based on that.
+
+The hardest part here is getting the HTML we want with the info the server gives back to us. This however can be slightly ignored because i think if we can hammer out what we get from the terminal, then we will have the back end done ( as it is more important)
+
+My goals for this are as follows:
+    Be able to see all tables available
+    Be able to insert, update those tables.
+    Search for someone's INFO based of their employee_id
+    I think if we can get these 3 things down, minimum, then we are good. 

@@ -1,6 +1,14 @@
-{
-    "host": "fanny.db.elephantsql.com",
-    "user": "ijonvfva",
-    "password": "qATO_knbfN5fF4IwBMoMV9rYpOFlOTai",
-    "database": "ijonvfva"
-}
+const { Pool } = require('pg');
+// you can also use the online posrgres database: elephantSQL
+//https://www.youtube.com/watch?v=BuJj4LCWP_4
+//#postgres://username:password@hostname:port/database
+
+const pool = new Pool({
+  host: "fanny.db.elephantsql.com",
+  user: "ijonvfva",
+  password: "qATO_knbfN5fF4IwBMoMV9rYpOFlOTai",
+  database: "ijonvfva",
+  port: "",
+});
+
+module.exports = pool;
