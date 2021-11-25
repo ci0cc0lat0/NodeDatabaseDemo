@@ -9,11 +9,42 @@ const displayDemos = () => {
   demos.sort((a, b) => {
     return a.key - b.key;
   });
-
   const demoTable = document.querySelector('#demo-table');
+  let testHTML = "";
+  console.log(Object.keys(demos[0]))
+  abcd = Object.keys(demos[0])
+  var nextCell = abcd[0]
+  console.log(nextCell)
+  console.log(demos[0][nextCell])
+  var table  = document.createElement("TABLE");
+  table.border = "1";
+
+  var columnCount = abcd.length
+
+  var row = table.insertRow(-1)
+  for(let i = 0; i < columnCount;i++){
+      var headerCell = document.createElement("TH");
+      headerCell.innerHTML = abcd[i]
+      row.appendChild(headerCell);
+  }
+
+  for(let i = 0; i< demos.length; i++){
+      row = table.insertRow(-1);
+      for(let j = 0;j < columnCount;j++){
+          var cell = row.insertCell(-1);
+          var nextCell = abcd[j]
+          cell.innerHTML = demos[i][nextCell]
+      }
+  }
+  var dvTable = document.getElementById("dvTable")
+  dvTable.innerHTML = "";
+  dvTable.appendChild(table)
+
   // display all demos by modifying the HTML in "demo-table"
+  /*
   let tableHTML = "";
   demos.map(demo =>{
+
     tableHTML +=
     `<tr key=${demo.key}>
     <th>${demo.key}</th>
@@ -25,6 +56,7 @@ const displayDemos = () => {
 
 
   demoTable.innerHTML = tableHTML;
+  */
 }
 async function all(){
 
