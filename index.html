@@ -1,10 +1,50 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<style>
+    .button {
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    
+    .buttonAdd {background-color: #4CAF50;} 
+    .buttonEdit {background-color: #008CBA;}
+    .buttonDelete {background-color: #f44336;}
+    .buttonSave {background-color: darksalmon;}
+</style>
 
-    </body>
+<body>
+    <form action="#" th:action="@{/index}" th:object="${index}" method="post">
+        <h>HW3</h><br>
+        <!--Add new tables-->
+        <label> Add Tables:</label><br>
+        <input type="text" th:field="*{addTables}"/><br>
+        <button class="button buttonAdd">Add</button><br>
+
+        <!--Not sure how to automatically update drop down table after we add tables-->
+        <label> Select Table:</label><br>
+        <select th:field="*{selectTable}" required>
+            <option value="table1">Table 1</option>
+            <option value="table2">Table 2</option>
+        </select><br>
+        <!--show the table-->
+        <div th:text="${table}"></div>
+        <!--Edit Rows-->			
+        <button class="button buttonEdit">Edit</button>
+        <button class="button buttonDelete">Delete</button>
+        <!--show the table-->
+        <div th:text="${table}"></div>
+    </form>
+    <button class="button buttonSave">Save</button>
+</body>
 </html>
