@@ -3,48 +3,89 @@
 <head> 
     <title>Getting Started: Serving Web Content</title> 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <style>
+        .button {
+        border: none;
+        color: white;
+        padding: 5px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+        
+        .buttonSelect {background-color: coral;}
+        .buttonAdd {background-color: #4CAF50;} 
+        .buttonEdit {background-color: #008CBA;}
+        .buttonDelete {background-color: #f44336;}
+        .buttonSave {background-color: darksalmon;}
+    </style>
 </head>
-<style>
-    .button {
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-    }
-    
-    .buttonAdd {background-color: #4CAF50;} 
-    .buttonEdit {background-color: #008CBA;}
-    .buttonDelete {background-color: #f44336;}
-    .buttonSave {background-color: darksalmon;}
-</style>
 
 <body>
     <form action="#" th:action="@{/index}" th:object="${index}" method="post">
         <h>HW3</h><br>
-        <!--Add new tables-->
-        <label> Add Tables:</label><br>
-        <input type="text" th:field="*{addTables}"/><br>
-        <button class="button buttonAdd">Add</button><br>
-
-        <!--Not sure how to automatically update drop down table after we add tables-->
-        <label> Select Table:</label><br>
-        <select th:field="*{selectTable}" required>
-            <option value="table1">Table 1</option>
-            <option value="table2">Table 2</option>
-        </select><br>
-        <!--show the table-->
-        <div th:text="${table}"></div>
-        <!--Edit Rows-->			
-        <button class="button buttonEdit">Edit</button>
-        <button class="button buttonDelete">Delete</button>
-        <!--show the table-->
-        <div th:text="${table}"></div>
+        <div>
+            <label for="tableSelect">Select a table:</label>
+            <select name="tableSelect" id="tableSelect">
+                <option value="table1">table 1</option>
+                <!--Not sure how to add options automatically-->
+            </select>
+            <button class="button buttonSelect" id="table-button" onclick="tableSelect()">Select</button>
+        </div>
+        <div>
+            <button class="button buttonAdd">Add</button>
+        </div>
+        <div>
+            <button class="button buttonEdit">Edit</button>
+        </div>
+        <div>
+            <button class="button buttonDelete">Delete</button>
+        </div>
+        
     </form>
     <button class="button buttonSave">Save</button>
 </body>
 </html>
+<!--
+    <!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <div>
+            <input type="text" placeholder="table" id="table-input">
+            <button type="button" id="table-button" onclick="tableSelect()">Table Select</button>
+        </div>
+        <div>
+            <input type="text" placeholder="table" id="table-input">
+            <input type="text" placeholder="table" id="table-input">
+            <button type="button" id="table-button" onclick="insertRow()">Insert</button>
+        </div>
+        <div class="">
+            <table class="table mt-5 text-center" id="demo-list">
+                <thead>
+                  <tr>
+                    <th>Key</th>
+                    <th>Description</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="demo-table">
+                </tbody>
+        </div>
+
+        <div id="dvTable">
+
+        </div>
+    <script src="main.js" ></script>
+    </body>
+
+</html>-->
