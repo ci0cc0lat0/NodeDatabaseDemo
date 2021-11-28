@@ -57,7 +57,6 @@ app.get("/demos/:id", async(req, res)=>{
     }
 });
 
-
 //Tells where the index.html is
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname + '/public/index.html'));
