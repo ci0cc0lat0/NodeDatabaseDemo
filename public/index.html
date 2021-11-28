@@ -6,6 +6,24 @@
         <title></title>
     </head>
     <body>
+        <div class="">
+            <form action="#">
+      <label for="departments">Department </label>
+      <select name="department" id="department">
+        <option id="allSelect" value="all">All</option>
+        <option id="flightSelect" value="flight_crew">Flight crew</option>
+        <option id="passSelect" value="passenger_handling">Passenger Handling</option>
+        <option id="cateringSelect" value="catering">Catering</option>
+        <option id="cargoSelect" value="cargo">Cargo</option>
+        <option id="smSelect" value="sales/marketing">Sales & Marketing</option>
+        <option id="techSelect" value="techinical">Techinical</option>
+        <option id="opSelect" value="operations">Operations</option>
+        <option id="adminSelect" value="administration">Administration</option>
+      </select>
+      <input type="submit" value="Submit" onclick="selectDep()" />
+</form>
+
+        </div>
         <div>
             <input type="text" placeholder="table" id="table-input">
             <button type="button" id="table-button" onclick="tableSelect()">Table Select</button>
@@ -15,6 +33,7 @@
             <input type="text" placeholder="table" id="table-input">
             <button type="button" id="table-button" onclick="insertRow()">Insert</button>
         </div>
+        <!--
         <div class="">
             <table class="table mt-5 text-center" id="demo-list">
                 <thead>
@@ -25,11 +44,12 @@
                     <th>Delete</th>
                   </tr>
                 </thead>
-                <!-- add todos in tbody by modying the HTML in main.js -->
+                add todos in tbody by modying the HTML in main.js
                 <tbody id="demo-table">
                 </tbody>
         </div>
-
+        -->
+        <h2 id='currentTableName'></h1>
         <div id="dvTable">
 
         </div>

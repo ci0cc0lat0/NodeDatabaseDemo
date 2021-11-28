@@ -1,6 +1,8 @@
 // set global variable demos
 let demos = []
-var currentTable  = "demos"
+//set this to demo in order to show a table upon loaading
+var currentTable  = ""
+
 // function to set demos
 const setDemos = (data) => {
   demos = data;
@@ -9,15 +11,17 @@ const displayDemos = () => {
   demos.sort((a, b) => {
     return a.key - b.key;
   });
+
   const demoTable = document.querySelector('#demo-table');
   let testHTML = "";
-  console.log(Object.keys(demos[0]))
+  //console.log(Object.keys(demos[0]))
   abcd = Object.keys(demos[0])
+  console.log(abcd)
   var nextCell = abcd[0]
-  console.log(nextCell)
-  console.log(demos[0][nextCell])
+  //console.log(nextCell)
+  //console.log(demos[0][nextCell])
   var table  = document.createElement("TABLE");
-  table.border = "1";
+  table.border = "5";
 
   var columnCount = abcd.length
 
@@ -36,8 +40,10 @@ const displayDemos = () => {
           cell.innerHTML = demos[i][nextCell]
       }
   }
+
   var dvTable = document.getElementById("dvTable")
   dvTable.innerHTML = "";
+
   dvTable.appendChild(table)
 
   // display all demos by modifying the HTML in "demo-table"
@@ -82,32 +88,35 @@ async function all(){
 }
 all();
 
-async function initDisplay(){
-    try {
-
-    }catch(e){
-
-    }
-
-}
 async function tableSelect(){
+    // sets name of the table to be queried
     currentTable = document.querySelector('#table-input').value;
-    //all()
-    //console.log(currentTable)
     const data = {currentTable};
+    // the beginning of server operations
     const options = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
     };
-    const response = await fetch("http://localhost:3000/bruh",options);
+    // response here gets info back from the server, in this case, the actual query
+    // from the other side
+    const response = await fetch("http://localhost:3000/select",options);
+    // sets h2 block to the name of the table being queried
+    document.getElementById("currentTableName").innerHTML = currentTable
+    // assigns the response into json and sets it equal to the variable that will be put through setDemos
     const newTable = await response.json()
     setDemos(newTable);
+    // DisplayDemos takes the global demos and displays the tables dyanmically
     displayDemos();
+    //document.querySelector("#table-input").innerHTML = "";
     //demos = newTable);
     //console.log(demos)
     //all();
 
+}
+async function selectDep(){
+    var depSelect  = document.getElementById("department");
+    console.log(depSelect)
 }
 async function funcTest(){
      document.getElementById("bruh").innerHTML = "YOU CLICKED ME!";

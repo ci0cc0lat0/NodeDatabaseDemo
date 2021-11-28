@@ -7,16 +7,18 @@ const pool = require('./creds');
 app.use(express.static('public'));
 app.use(cors())
 app.use(express.json());
-
+// the current table being viewed for query. Empty
 var currentViewedTable;
 
-app.post('/bruh',async(req,res)=>{
+// The address we designate. will be accessed and communicated to by the main.js
+app.post('/select',async(req,res)=>{
     try{
         console.log('I got a request');
         const data = req.body
         currentViewedTable = data.currentTable
         console.log(`Select * from ${currentViewedTable};`)
         const newTable = await pool.query(`Select * from ${currentViewedTable};`)
+
         res.json(newTable.rows)
         console.log(newTable.rows)
         res.end()
@@ -25,7 +27,7 @@ app.post('/bruh',async(req,res)=>{
 }
 });
 
-
+// Nothing to worry about
 app.get('/demos', async(req, res)=>{
   try{
     const allDemos = await pool.query(`SELECT * FROM demo`);
@@ -56,12 +58,11 @@ app.get("/demos/:id", async(req, res)=>{
 });
 
 
-
-
-
+//Tells where the index.html is
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname + '/public/index.html'));
 });
+//Gives the port to listen to
 const port = process.env.PORT || 3000;
 app.listen(port, ()=>{
   console.log(`server has started on port ${port}`);
