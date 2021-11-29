@@ -101,11 +101,11 @@ async function employeeSelect(){
     displayDemos();
 }
 async function tableSelect(){
-    var tableSelect = document.selectedIndex;
-    tableSelect = tableSelect - 1;
+    var currentTable = document.getElementById("tableSelect").value;
     // sets name of the table to be queried
-    currentTable = document.querySelector('#table-input').value;
+    //currentTable = document.querySelector('#table-input').value;
     const data = {currentTable};
+    console.log(currentTable);
     // the beginning of server operations
     const options = {
         method: 'POST',
