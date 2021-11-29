@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS "job";
 
 CREATE TABLE "job" (
-  job_id integer NULL,
+  job_id integer PRIMARY KEY NULL,
   job_title TEXT NULL,
   dep_id integer NULL,
   benefit_code integer NULL,
