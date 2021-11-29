@@ -101,6 +101,8 @@ async function employeeSelect(){
     displayDemos();
 }
 async function tableSelect(){
+    var tableSelect = document.selectedIndex;
+    tableSelect = tableSelect - 1;
     // sets name of the table to be queried
     currentTable = document.querySelector('#table-input').value;
     const data = {currentTable};
