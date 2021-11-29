@@ -3,7 +3,26 @@
     <head>
 
         <meta charset="utf-8">
-        <title></title>
+        <title>HW3</title>
+        <style>
+            .button {
+            border: none;
+            color: white;
+            padding: 5px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            cursor: pointer;
+            }
+            
+            .buttonSelect {background-color: coral;}
+            .buttonDep {background-color: #4CAF50;} 
+            .buttonInsert {background-color: #008CBA;}
+            .buttonEmp {background-color: darksalmon;}
+            .buttonDelete {background-color: #f44336;}
+        </style>
     </head>
     <body>
         <div class="">
@@ -20,21 +39,32 @@
         <option id="opSelect" value="operations">Operations</option>
         <option id="adminSelect" value="administration">Administration</option>
       </select>
-      <button type="button" value="Submit" onclick="selectDep()">Submit</button>
+      <button class="buttonDep" value="Submit" onclick="selectDep()">Submit</button>
 </form>
         </div>
         <div>
             <input type="text" placeholder="employee id" id="employee-input">
-            <button type="button" id="employee-button" onclick="employeeSelect()">Employee search</button>
+            <button class="buttonEmp" id="employee-button" onclick="employeeSelect()">Employee search</button>
+        </div>
+        <div>
+            <label for="tableSelect">Select Table: </label>
+            <select name="tableSelect" id="tableSelect">
+                <option id="payment" value="payment">payment</option>
+                <option id="employee" value="employee">employee</option>
+                <option id="job" value="job">job</option>
+                <option id="salary" value="salary">salary</option>
+                <option id="department" value="department">department</option>
+                <option id="benefit" value="benefit">benefit</option>
+            </select>
+            <button class="buttonSelect" id="table-button" onclick="tableSelect()">Submit</button>    
+            <!--
+            <input type="text" placeholder="table" id="table-input">
+            <button type="button" id="table-button" onclick="tableSelect()">Table Select</button>-->
         </div>
         <div>
             <input type="text" placeholder="table" id="table-input">
-            <button type="button" id="table-button" onclick="tableSelect()">Table Select</button>
-        </div>
-        <div>
             <input type="text" placeholder="table" id="table-input">
-            <input type="text" placeholder="table" id="table-input">
-            <button type="button" id="table-button" onclick="insertRow()">Insert</button>
+            <button class="buttonInsert" id="table-button" onclick="insertRow()">Insert</button>
         </div>
         <!--
         <div class="">
