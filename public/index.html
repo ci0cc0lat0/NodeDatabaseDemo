@@ -7,25 +7,22 @@
     <body>
         <div class="">
             <form action="#">
-      <label for="departments">Department </label>
-      <select name="department" id="department">
-        <option id="allSelect" value="all">All</option>
-        <option id="flightSelect" value="flight_crew">Flight crew</option>
-        <option id="passSelect" value="passenger_handling">Passenger Handling</option>
-        <option id="cateringSelect" value="catering">Catering</option>
-        <option id="cargoSelect" value="cargo">Cargo</option>
-        <option id="smSelect" value="sales/marketing">Sales & Marketing</option>
-        <option id="techSelect" value="techinical">Techinical</option>
-        <option id="opSelect" value="operations">Operations</option>
-        <option id="adminSelect" value="administration">Administration</option>
-      </select>
-      <button type="button" value="Submit" onclick="selectDep()">Submit</button>
-</form>
+                <label for="departments">Department </label>
+                <select name="department" id="department">
+                    <option id="allSelect" value="all">All</option>
+                    <option id="flightSelect" value="flight_crew">Flight crew</option>
+                    <option id="passSelect" value="passenger_handling">Passenger Handling</option>
+                    <option id="cateringSelect" value="catering">Catering</option>
+                    <option id="cargoSelect" value="cargo">Cargo</option>
+                    <option id="smSelect" value="sales/marketing">Sales & Marketing</option>
+                    <option id="techSelect" value="techinical">Techinical</option>
+                    <option id="opSelect" value="operations">Operations</option>
+                    <option id="adminSelect" value="administration">Administration</option>
+                </select>
+                <button type="button" value="Submit" onclick="selectDep()">Submit</button>
+            </form>
         </div>
-        <div>
-            <input type="text" placeholder="employee id" id="employee-input">
-            <button type="button" id="employee-button" onclick="employeeSelect()">Employee search</button>
-        </div>
+
         <div>
             <label for="relations">Select Table: </label>
             <select name="tableSelect" id="tableSelect">
@@ -37,10 +34,13 @@
                 <option id="benefit" value="benefit">benefit</option>
             </select>
             <button type="button" id="table-button" onclick="tableSelect()">Submit</button>    
-            <!--
-            <input type="text" placeholder="table" id="table-input">
-            <button type="button" id="table-button" onclick="tableSelect()">Table Select</button>-->
         </div>
+
+        <div>
+            <input type="text" placeholder="employee id" id="employee-input">
+            <button type="button" id="employee-button" onclick="employeeSelect()">Employee search</button>
+        </div>
+        
         <div>
             <input type="text" placeholder="table" id="table-input">
             <input type="text" placeholder="table" id="table-input">
