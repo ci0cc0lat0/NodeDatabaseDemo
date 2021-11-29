@@ -87,7 +87,19 @@ async function all(){
      }
 }
 all();
-
+async function employeeSelect(){
+    var employeeID = document.querySelector('#employee-input').value;
+    const data = {employeeID}
+    const options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    };
+    const response = await fetch("http://localhost:3000/singleEmployee",options)
+    const singleTable = await response.json()
+    setDemos(singleTable);
+    displayDemos();
+}
 async function tableSelect(){
     // sets name of the table to be queried
     currentTable = document.querySelector('#table-input').value;
@@ -115,8 +127,18 @@ async function tableSelect(){
 
 }
 async function selectDep(){
-    var depSelect  = document.getElementById("department");
-    console.log(depSelect)
+    var depSelect  = document.getElementById("department").selectedIndex;
+    depSelect = depSelect - 1;
+    const data = {depSelect};
+    const options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    };
+    const response = await fetch("http://localhost:3000/dep",options)
+    const tableByDep = await response.json()
+    setDemos(tableByDep);
+    displayDemos();
 }
 async function funcTest(){
      document.getElementById("bruh").innerHTML = "YOU CLICKED ME!";

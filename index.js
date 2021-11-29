@@ -26,7 +26,38 @@ app.post('/select',async(req,res)=>{
     console.log(e.message)
 }
 });
-
+app.post('/singleEmployee', async(req,res)=>{
+    try{
+        const data = req.body
+        const employeeID = data.employeeID
+        console.log(`SELECT * from employee where employee_id = ${employeeID}`)
+        const employeeQuery = await pool.query(`SELECT * from employee where employee_id = ${employeeID};`)
+        res.json(employeeQuery.rows)
+        res.end()
+    }catch(e){
+        console.log(e.message)
+    }
+})
+app.post('/dep', async(req,res)=>{
+    try{
+        const data = req.body
+        const employeeByDep = data.depSelect
+        if (employeeByDep >=0 ){
+            console.log(`select * from employee join job ON employee.job_id = job.job_id where dep_id = ${employeeByDep};`)
+            const depQuery = await pool.query(`select employee.* from employee join job ON employee.job_id = job.job_id where dep_id = ${employeeByDep};`)
+            res.json(depQuery.rows)
+            res.end()
+        }
+        else{
+            const altQuery =await pool.query(`Select * from employee`);
+            res.json(altQuery.rows)
+            res.end()
+        }
+    }catch(e){
+        console.log("Error Message:")
+        console.log(e.message)
+    }
+})
 // Nothing to worry about
 app.get('/demos', async(req, res)=>{
   try{
