@@ -5,6 +5,7 @@
         <title>HW3</title>
         <style>
         .form-popup {
+            text-align: center;
             display: none;
             position: fixed;
             bottom: 0;
@@ -25,14 +26,14 @@
             width: 280px;
         }
         .form-container {
-            max-width: 300px;
-            padding: 10px;
+            max-width: 450px;
+            padding: 5px;
             background-color: white;
         }
         .form-container input[type=text], .form-container input[type=password] {
             width: 100%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
+            padding: 5px;
+            margin: 5px 0 10px 0;
             border: none;
             background: #f1f1f1;
         }
@@ -50,11 +51,11 @@
             margin-bottom:10px;
             opacity: 0.8;
         }
-        .form-container .cancel {
-            background-color: red;
-        }
         .form-container .btn:hover, .open-button:hover {
             opacity: 1;
+        }
+        .form-container .cancel {
+            background-color: red;
         }
         </style>
     </head>
@@ -98,28 +99,31 @@
             <button type="button" id="employee-button" onclick="employeeSelect()">Employee search</button>
         </div>
 
-        <button class="add-button" onClick="addNewsEmployee()">Add</button>
-        <div class="form-popup" id="employee-button">
-            <h1>Add New Employee</h1>
+        <button class="add-button" onClick="addNewEmployee()">Add</button>
+        <div class="form-popup" id="new-employee">
+            <form class="form-container">
+                <h1>Add New Employee</h1>
             
-            <label for="employee_id"><b>Employee ID: </b></label>
-            <input type="text" placeholder="employeeId" required>
-            <label for="fname"><b>First Name: </b></label>
-            <input type="text" placeholder="firstName" required>
-            <label for="lname"><b>Last Name: </b></label>
-            <input type="text" placeholder="lastName" required>
-            <label for="dob"><b>Date of Birth: </b></label>
-            <input type="text" placeholder="dateOfBirsth" required>
-            <label for="email"><b>Email: </b></label>
-            <input type="text" placeholder="email" required>
-            <label for="phone"><b>Phone Number: </b></label>
-            <input type="text" placeholder="phoneNumber" required>
-            <label for="address"><b>Address: </b></label>
-            <input type="text" placeholder="address" required>
-            <label for="job_id"><b>Job ID: </b></label>
-            <input type="text" placeholder="jobId" required>
+                <label for="employee_id"><b>Employee ID: </b></label>
+                <input type="text" placeholder="Employee Id" required>
+                <label for="fname"><b>First Name: </b></label>
+                <input type="text" placeholder="First Name" required>
+                <label for="lname"><b>Last Name: </b></label>
+                <input type="text" placeholder="Last Name" required>
+                <label for="dob"><b>Date of Birth: </b></label>
+                <input type="text" placeholder="Date Of Birsth" required>
+                <label for="email"><b>Email: </b></label>
+                <input type="text" placeholder="Email" required>
+                <label for="phone"><b>Phone Number: </b></label>
+                <input type="text" placeholder="Phone Number" required>
+                <label for="address"><b>Address: </b></label>
+                <input type="text" placeholder="Address" required>
+                <label for="job_id"><b>Job ID: </b></label>
+                <input type="text" placeholder="Job Id" required>
 
-            <button type="submit" class="btn">Add</button>            
+                <button type="submit" class="btn">Add</button> 
+                <button type="button" class="btn cancel" onclick="closePopup()">Close</button>
+            </form>       
         </div>
 
         <button>Remove</button>

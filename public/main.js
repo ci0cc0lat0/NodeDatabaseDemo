@@ -144,8 +144,11 @@ async function selectDep(){
 }
 
 async function addNewEmployee() {
-    document.getElementById("new").style.display = "block";
-    
+    document.getElementById("new-employee").style.display = "block";
+}
+
+async function closePopup() {
+    document.getElementById("new-employee").style.display = "none";
 }
 
 async function funcTest(){
