@@ -59,13 +59,15 @@ app.post('/dep', async(req,res)=>{
         console.log(e.message)
     }
 })
-app.post('/employeeByRelation', async(req,res)=>{
+app.post('/EmployeeByRelation', async(req,res)=>{
 
-    //const data;
-    //const relationChoice = data;
-    //const specificRelationQuery = await pool.query(`select employee.*, ${relationChoice}.* from employee join job ON employee.job_id = job.job_id join benefit ON job.benefit_code = benefit.benefit_code join salary ON job.salary_id = salary.salary_id join department ON job.dep_id = department.dep_id join payment ON employee.employee_id = payment.employee_id;`)
-    //res.json(specificRelationQuery.rows)
-    //res.end()
+    const data = req.body;
+    const employeeChoice = data.employeeID
+    const relationChoice = data.tableChoice;
+    console.log(`select employee.*, ${relationChoice}.* from employee join job ON employee.job_id = job.job_id join benefit ON job.benefit_code = benefit.benefit_code join salary ON job.salary_id = salary.salary_id join department ON job.dep_id = department.dep_id join payment ON employee.employee_id = payment.employee_id where employee.employee_id = ${employeeChoice};`)
+    const specificRelationQuery = await pool.query(`select employee.*, ${relationChoice}.* from employee join job ON employee.job_id = job.job_id join benefit ON job.benefit_code = benefit.benefit_code join salary ON job.salary_id = salary.salary_id join department ON job.dep_id = department.dep_id join payment ON employee.employee_id = payment.employee_id where employee.employee_id = ${employeeChoice};`)
+    res.json(specificRelationQuery.rows)
+    res.end()
 });
 // Nothing to worry about
 app.get('/demos', async(req, res)=>{

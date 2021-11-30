@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">  
+<html lang="en" dir="ltr">
     <head>
 
         <meta charset="utf-8">
@@ -25,6 +25,14 @@
         </div>
         <div>
             <input type="text" placeholder="employee id" id="employee-input">
+            <select name="relationForEmployee" id="relationForEmployee">
+                <option value="Employee">Employee</option>
+                <option value="payment">Payment</option>
+                <option value="job">Job</option>
+                <option value="department">Department</option>
+                <option value="salary">Salary</option>
+                <option value="benefit">Benefits</option>
+            </select>
             <button type="button" id="employee-button" onclick="employeeSelect()">Employee search</button>
         </div>
         <div>
@@ -32,9 +40,10 @@
             <button type="button" id="table-button" onclick="tableSelect()">Table Select</button>
         </div>
         <div>
-            <input type="text" placeholder="table" id="table-input">
-            <input type="text" placeholder="table" id="table-input">
-            <button type="button" id="table-button" onclick="insertRow()">Insert</button>
+            <form action="#">
+      <label for="employeeRelation">Specific Table </label>
+
+      <button type="button" value="Submit" onclick>Specific table</button>
         </div>
         <!--
         <div class="">

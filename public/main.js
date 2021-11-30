@@ -89,6 +89,9 @@ async function all(){
 }
 all();
 async function employeeSelect(){
+    var tableChoice = document.getElementById("relationForEmployee").selectedIndex
+    console.log(tableChoice)
+    if (tableChoice == 0){
     var employeeID = document.querySelector('#employee-input').value;
     const data = {employeeID}
     const options = {
@@ -100,6 +103,21 @@ async function employeeSelect(){
     const singleTable = await response.json()
     setDemos(singleTable);
     displayDemos();
+}else{
+    tableChoice = document.getElementById("relationForEmployee").value;
+    var employeeID = document.querySelector('#employee-input').value;
+    const data = {tableChoice,employeeID}
+    const options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    };
+    const response = await fetch("http://localhost:3000/EmployeeByRelation",options)
+    const singleTable = await response.json()
+    setDemos(singleTable);
+    displayDemos();
+}
+
 }
 async function tableSelect(){
     // sets name of the table to be queried
@@ -142,7 +160,7 @@ async function selectDep(){
     displayDemos();
 }
 async function employeeByRelation(){
-    
+
 }
 async function funcTest(){
      document.getElementById("bruh").innerHTML = "YOU CLICKED ME!";
