@@ -145,6 +145,7 @@ async function selectDep(){
 
 async function addNewEmployee() {
     document.getElementById("new").style.display = "block";
+    
 }
 
 async function funcTest(){
