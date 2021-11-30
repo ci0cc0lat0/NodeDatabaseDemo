@@ -10,7 +10,7 @@
             position: fixed;
             bottom: 0;
             right: 15px;
-            border: 3px solid #f1f1f1;
+
             z-index: 9;
         }
         .add-button {
@@ -25,13 +25,17 @@
             right: 28px;
             width: 280px;
         }
-        .form-container {
-            max-width: 450px;
-            padding: 5px;
-            background-color: white;
+        .form-container{
+            margin: 0 auto 0 auto;
+padding: 0 0 0 0;
+width: 35%;
+background-color: white;
+border: solid;
+border-color: black;
         }
         .form-container input[type=text], .form-container input[type=password] {
-            width: 100%;
+            text-align: center;
+            width: 90%;
             padding: 5px;
             margin: 5px 0 10px 0;
             border: none;
@@ -91,7 +95,7 @@
                 <option id="department" value="department">department</option>
                 <option id="benefit" value="benefit">benefit</option>
             </select>
-            <button type="button" id="table-button" onclick="tableSelect()">Submit</button>    
+            <button type="button" id="table-button" onclick="tableSelect()">Submit</button>
         </div>
 
         <div>
@@ -103,7 +107,7 @@
         <div class="form-popup" id="new-employee">
             <form class="form-container">
                 <h1>Add New Employee</h1>
-            
+
                 <label for="employee_id"><b>Employee ID: </b></label>
                 <input type="text" placeholder="Employee Id" required>
                 <label for="fname"><b>First Name: </b></label>
@@ -121,22 +125,22 @@
                 <label for="job_id"><b>Job ID: </b></label>
                 <input type="text" placeholder="Job Id" required>
 
-                <button type="submit" class="btn">Add</button> 
+                <button type="submit" class="btn">Add</button>
                 <button type="button" class="btn cancel" onclick="closePopup()">Close</button>
-            </form>       
+            </form>
         </div>
 
         <button>Remove</button>
         <button>Edit</button>
-        
+
         <!--
         <div>
             <input type="text" placeholder="table" id="table-input">
             <input type="text" placeholder="table" id="table-input">
             <button type="button" id="table-button" onclick="insertRow()">Insert</button>
-        </div>    
+        </div>
         -->
-        
+
         <!--
         <div class="">
             <table class="table mt-5 text-center" id="demo-list">
