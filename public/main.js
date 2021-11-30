@@ -151,7 +151,9 @@ async function funcTest(){
      }
 }
 
-
+async function addNewEmployee(){
+    
+}
 
 // My functions
 
