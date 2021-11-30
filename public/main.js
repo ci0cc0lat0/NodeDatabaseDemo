@@ -51,6 +51,7 @@ const displayDemos = () => {
   let tableHTML = "";
   demos.map(demo =>{
 
+nodemon index.js
     tableHTML +=
     `<tr key=${demo.key}>
     <th>${demo.key}</th>
@@ -139,6 +140,9 @@ async function selectDep(){
     const tableByDep = await response.json()
     setDemos(tableByDep);
     displayDemos();
+}
+async function employeeByRelation(){
+    
 }
 async function funcTest(){
      document.getElementById("bruh").innerHTML = "YOU CLICKED ME!";
