@@ -58,6 +58,14 @@ app.post('/dep', async(req,res)=>{
         console.log(e.message)
     }
 })
+/* Add new employee
+app.get('/addNewEmployee', async(req, res)=>{
+    try{
+        const 
+    }
+})
+*/
+
 // Nothing to worry about
 app.get('/demos', async(req, res)=>{
   try{
@@ -97,7 +105,6 @@ const port = process.env.PORT || 3000;
 app.listen(port, ()=>{
   console.log(`server has started on port ${port}`);
 });
-
 
 
 

@@ -3,11 +3,68 @@
     <head>
         <meta charset="utf-8">
         <title>HW3</title>
+        <style>
+        .form-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+        }
+        .add-button {
+            background-color: #555;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;
+        }
+        .form-container {
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+        }
+        .form-container input[type=text], .form-container input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+        .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+        .form-container .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom:10px;
+            opacity: 0.8;
+        }
+        .form-container .cancel {
+            background-color: red;
+        }
+        .form-container .btn:hover, .open-button:hover {
+            opacity: 1;
+        }
+        </style>
     </head>
+
+
+
     <body>
         <div class="">
             <form action="#">
-                <label for="departments">Department </label>
+                <label for="departments">Employee by Department: </label>
                 <select name="department" id="department">
                     <option id="allSelect" value="all">All</option>
                     <option id="flightSelect" value="flight_crew">Flight crew</option>
@@ -41,8 +98,28 @@
             <button type="button" id="employee-button" onclick="employeeSelect()">Employee search</button>
         </div>
 
-        <div>
-            <button type=button id="employee-button" onclick="addNewEmployee()">Add New Employee</button>
+        <button class="add-button" onClick="addEmployee()">Add</button>
+        <div class="form-popup" id="employee-button">
+            <h1>Add New Employee</h1>
+            
+            <label for="employee_id"><b>Employee ID: </b></label>
+            <input type="text" placeholder="employeeId" required>
+            <label for="fname"><b>First Name: </b></label>
+            <input type="text" placeholder="firstName" required>
+            <label for="lname"><b>Last Name: </b></label>
+            <input type="text" placeholder="lastName" required>
+            <label for="dob"><b>Date of Birth: </b></label>
+            <input type="text" placeholder="dateOfBirsth" required>
+            <label for="email"><b>Email: </b></label>
+            <input type="text" placeholder="email" required>
+            <label for="phone"><b>Phone Number: </b></label>
+            <input type="text" placeholder="phoneNumber" required>
+            <label for="address"><b>Address: </b></label>
+            <input type="text" placeholder="address" required>
+            <label for="job_id"><b>Job ID: </b></label>
+            <input type="text" placeholder="jobId" required>
+
+            <button type="submit" class="btn">Add</button>            
         </div>
 
         <button>Remove</button>

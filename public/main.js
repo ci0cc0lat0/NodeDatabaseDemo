@@ -142,6 +142,11 @@ async function selectDep(){
     setDemos(tableByDep);
     displayDemos();
 }
+
+async function addNewEmployee() {
+    document.getElementById("new").style.display = "block";
+}
+
 async function funcTest(){
      document.getElementById("bruh").innerHTML = "YOU CLICKED ME!";
      const getData = async () => {
@@ -149,10 +154,6 @@ async function funcTest(){
          .then(response => response.json())
          .then(data => console.log(data))
      }
-}
-
-async function addNewEmployee(){
-    
 }
 
 // My functions
