@@ -8,111 +8,12 @@
 
     <body>
         <div id="page-container">
-        <div id="grid-container">
-            <div class="center-grid1">
-                <div id="ebd">
-                    <h3> Employee By Department</h3>
-                    <form action="#">
-                        <label for="departments"></label>
-                            <select name="department" id="department">
-                                <option id="allSelect" value="all">All</option>
-                                <option id="flightSelect" value="flight_crew">Flight crew</option>
-                                <option id="passSelect" value="passenger_handling">Passenger Handling</option>
-                                <option id="cateringSelect" value="catering">Catering</option>
-                                <option id="cargoSelect" value="cargo">Cargo</option>
-                                <option id="smSelect" value="sales/marketing">Sales & Marketing</option>
-                                <option id="techSelect" value="techinical">Techinical</option>
-                                <option id="opSelect" value="operations">Operations</option>
-                                <option id="adminSelect" value="administration">Administration</option>
-                            </select>
-                        <button type="button" value="Submit" onclick="selectDep()">Submit</button>
-                    </form>
-                </div>
-                <div id="ts">
-                    <h3> Select Table </h3>
-                    <label for="relations"></label>
-                    <select name="tableSelect" id="tableSelect">
-                        <option id="payment" value="payment">payment</option>
-                        <option id="employee" value="employee">employee</option>
-                        <option id="job" value="job">job</option>
-                        <option id="salary" value="salary">salary</option>
-                        <option id="department" value="department">department</option>
-                        <option id="benefit" value="benefit">benefit</option>
-                    </select>
-                    <button type="button" id="table-button" onclick="tableSelect()">Submit</button>
-                </div>
-                <div id="es">
-                    <h3>Search by Employee ID</h3>
-                    <input type="text" placeholder="employee id" id="employee-input">
-                    <select name="relationForEmployee" id="relationForEmployee">
-                        <option value="Employee">Employee</option>
-                        <option value="payment">Payment</option>
-                        <option value="job">Job</option>
-                        <option value="department">Department</option>
-                        <option value="salary">Salary</option>
-                        <option value="benefit">Benefits</option>
-                    </select>
-                    <button type="button" id="employee-button" onclick="employeeSelect()">Employee search</button>
-                </div>
-            </div>
-            <div class="center-grid2">
-                <div>
-                    <form class="form-container">
-                        <h1>Add New Employee</h1>
-                            <div>
-                                <label for="employee_id"><b>Employee ID: </b></label>
-                                <input type="text" placeholder="Employee Id" required>
-                            </div>
-
-                            <div>
-                                <label for="fname"><b>First Name: </b></label>
-                                <input type="text" placeholder="First Name" required>
-                            </div>
-
-                            <div>
-                                <label for="lname"><b>Last Name: </b></label>
-                                <input type="text" placeholder="Last Name" required>
-                            </div>
-
-                            <div>
-                                <label for="dob"><b>Date of Birth: </b></label>
-                                <input type="text" placeholder="Date Of Birsth" required>
-                            </div>
-                            <div>
-                                <label for="email"><b>Email: </b></label>
-                                <input type="text" placeholder="Email" required>
-                            </div>
-                            <div>
-                                <label for="phone"><b>Phone Number: </b></label>
-                                <input type="text" placeholder="Phone Number" required>
-                            </div>
-                            <div>
-                                <label for="address"><b>Address: </b></label>
-                                <input type="text" placeholder="Address" required>
-                            </div>
-
-                            <div>
-                                <label for="job_id"><b>Job ID: </b></label>
-                                <input type="text" placeholder="Job Id" required>
-                            </div>
-
-                        <button type="submit" class="btn">Add</button>
-                    </div>
-            </div>
-            <div class="center-grid3">
-
-            </div>
-            <div class="center-grid4">
-                    <div id="dvTable">
-
-
-                    </div>
-            </div>
-            <!--
-            <div class="center-grid1">
-                <div class="projection" >
+            <div id="grid-container">
+                <div class="center-grid1">
+                    <div id="ebd">
+                        <h3> Employee By Department</h3>
                         <form action="#">
-                            <label for="departments">Employee by Department: </label>
+                            <label for="departments"></label>
                                 <select name="department" id="department">
                                     <option id="allSelect" value="all">All</option>
                                     <option id="flightSelect" value="flight_crew">Flight crew</option>
@@ -126,8 +27,10 @@
                                 </select>
                             <button type="button" value="Submit" onclick="selectDep()">Submit</button>
                         </form>
-
-                        <label for="relations">Select Table: </label>
+                    </div>
+                    <div id="ts">
+                        <h3> Select Table </h3>
+                        <label for="relations"></label>
                         <select name="tableSelect" id="tableSelect">
                             <option id="payment" value="payment">payment</option>
                             <option id="employee" value="employee">employee</option>
@@ -137,83 +40,76 @@
                             <option id="benefit" value="benefit">benefit</option>
                         </select>
                         <button type="button" id="table-button" onclick="tableSelect()">Submit</button>
-
-
-                    <div>
+                    </div>
+                    <div id="es">
+                        <h3>Search by Employee ID</h3>
                         <input type="text" placeholder="employee id" id="employee-input">
+                        <select name="relationForEmployee" id="relationForEmployee">
+                            <option value="Employee">Employee</option>
+                            <option value="payment">Payment</option>
+                            <option value="job">Job</option>
+                            <option value="department">Department</option>
+                            <option value="salary">Salary</option>
+                            <option value="benefit">Benefits</option>
+                        </select>
                         <button type="button" id="employee-button" onclick="employeeSelect()">Employee search</button>
                     </div>
-
-                <button class="add-button" onClick="addNewEmployee()">Add</button>
                 </div>
-                <div class="form-popup" id="new-employee">
+                <div class="center-grid2">
+                    <div>
+                        <form class="form-container">
+                            <h1>Add New Employee</h1>
+                                <div>
+                                    <label for="employee_id"><b>Employee ID: </b></label>
+                                    <input type="text" placeholder="Employee Id" required>
+                                </div>
 
+                                <div>
+                                    <label for="fname"><b>First Name: </b></label>
+                                    <input type="text" placeholder="First Name" required>
+                                </div>
+
+                                <div>
+                                    <label for="lname"><b>Last Name: </b></label>
+                                    <input type="text" placeholder="Last Name" required>
+                                </div>
+
+                                <div>
+                                    <label for="dob"><b>Date of Birth: </b></label>
+                                    <input type="text" placeholder="Date Of Birsth" required>
+                                </div>
+                                <div>
+                                    <label for="email"><b>Email: </b></label>
+                                    <input type="text" placeholder="Email" required>
+                                </div>
+                                <div>
+                                    <label for="phone"><b>Phone Number: </b></label>
+                                    <input type="text" placeholder="Phone Number" required>
+                                </div>
+                                <div>
+                                    <label for="address"><b>Address: </b></label>
+                                    <input type="text" placeholder="Address" required>
+                                </div>
+
+                                <div>
+                                    <label for="job_id"><b>Job ID: </b></label>
+                                    <input type="text" placeholder="Job Id" required>
+                                </div>
+
+                            <button type="submit" class="btn">Add</button>
+                        </div>
                 </div>
-
-                <button>Remove</button>
-                <button>Edit</button>
-            </div>
-            <div class="center-grid2">
-                <form class="form-container">
-                    <h1>Add New Employee</h1>
-                        <div>
-                            <label for="employee_id"><b>Employee ID: </b></label>
-                            <input type="text" placeholder="Employee Id" required>
-                        </div>
-
-                        <div>
-                            <label for="fname"><b>First Name: </b></label>
-                            <input type="text" placeholder="First Name" required>
-                        </div>
-
-                        <div>
-                            <label for="lname"><b>Last Name: </b></label>
-                            <input type="text" placeholder="Last Name" required>
-                        </div>
-
-                        <div>
-                            <label for="dob"><b>Date of Birth: </b></label>
-                            <input type="text" placeholder="Date Of Birsth" required>
-                        </div>
-
-                        <div>
-                            <label for="email"><b>Email: </b></label>
-                            <input type="text" placeholder="Email" required>
-                        <div>
-                            <label for="phone"><b>Phone Number: </b></label>
-                            <input type="text" placeholder="Phone Number" required>
-                        </div>
-
-                        <div>
-                            <label for="address"><b>Address: </b></label>
-                            <input type="text" placeholder="Address" required>
-                        </div>
-
-                        <div>
-                            <label for="job_id"><b>Job ID: </b></label>
-                            <input type="text" placeholder="Job Id" required>
-                        </div>
-
-                    <button type="submit" class="btn">Add</button>
-
-                </form>
-            </div>
-            <div class="center-grid3">
-
-            </div>
-            <div class="center-grid4">
-                <h2 id='currentTableName'></h1>
-                <div id="dvTable">
-
+                <div class="center-grid3">
 
                 </div>
+                <div class="center-grid4">
+                        <div id="dvTable">
+
+
+                        </div>
+                </div>
             </div>
-        -->
-        </div>
-
-
-
-    <script src="main.js" ></script>
+            <script src="main.js" ></script>
     </body>
 
 </html>
