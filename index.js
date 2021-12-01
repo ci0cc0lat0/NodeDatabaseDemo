@@ -61,6 +61,7 @@ app.post('/depSelect', async(req,res)=>{
 })
 app.post('/EmployeeByRelation', async(req,res)=>{
 
+
     const data = req.body;
     const employeeChoice = data.employeeID
     const relationChoice = data.tableChoice;
@@ -69,7 +70,40 @@ app.post('/EmployeeByRelation', async(req,res)=>{
     res.json(specificRelationQuery.rows)
     res.end()
 });
+app.post('/employeeInsert', async(req, res)=>{
+    console.log("hello")
+    try{
+    const data = req.body;
 
+    const employee_id = data.eid
+    const fname = data.fname
+    const lname = data.lname
+    const dob = data.dob
+    const email = data.email
+    const phonenum = data.phonenum
+    const address = data.address
+    const job_id = data.jid
+    console.log(`select salary_id from job where job_id = ${job_id};`)
+    console.log(`INSERT INTO employee VALUES (${employee_id}, '${fname}','${lname}','${dob}','${email}','${phonenum}','${address}',${job_id});`)
+    const salaryData  = await pool.query(`select salary_id from job where job_id = ${job_id};`)
+    const benefitData  = await pool.query(`select benefit_code from job where job_id = ${job_id};`)
+    const newS_id = salaryData.rows[0].salary_id
+    const newB_code = benefitData.rows[0].benefit_code
+
+
+    const start = await pool.query(`BEGIN TRANSACTION;`)
+    const addEmployee = await pool.query(`INSERT INTO employee VALUES (${employee_id}, '${fname}','${lname}','${dob}','${email}','${phonenum}','${address}',${job_id});`)
+    const addPayment = await pool.query(`INSERT INTO payment VALUES (${employee_id},${newS_id},0,0,0,0.153,${newB_code},0);`)
+    const end = await pool.query(`COMMIT TRANSACTION;`)
+
+    console.log("New hire added. Payment and employee tables affected")
+}catch(e){
+    console.log(e.message)
+    res.end();
+}
+
+    res.end();
+});
 
 //Tells where the index.html is
 app.get('*', function(req, res) {

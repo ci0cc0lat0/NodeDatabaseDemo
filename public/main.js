@@ -43,7 +43,7 @@ const generateRows = () => {
 
   dvTable.appendChild(table)
 
- 
+
 }
 async function all(){
 
@@ -139,4 +139,23 @@ async function selectDep(){
     const tableByDep = await response.json()
     setData(tableByDep);
     generateRows();
+}
+async function employeeInsert(){
+    console.log("here")
+    var eid = document.querySelector("#add-eid").value
+    var fname = document.querySelector("#add-fname").value
+    var lname = document.querySelector("#add-lname").value
+    var dob = document.querySelector("#add-dob").value
+    var email = document.querySelector("#add-email").value
+    var phonenum = document.querySelector("#add-phonenum").value
+    var address = document.querySelector("#add-address").value
+    var jid = document.querySelector("#add-jid").value
+
+    const data = {eid,fname,lname,dob,email,phonenum,address,jid}
+    const options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    };
+    const response  = await fetch("http://localhost:3000/employeeInsert",options)
 }
