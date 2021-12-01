@@ -18,13 +18,17 @@ const generateRows = () => {
   console.log(abcd)
   var nextCell = abcd[0]
   var table  = document.createElement("TABLE");
-  table.border = "5";
+  //table.border = "5";
+  table.style.backgrounColor = "blue"
+
+
 
   var columnCount = abcd.length
 
   var row = table.insertRow(-1)
   for(let i = 0; i < columnCount;i++){
       var headerCell = document.createElement("TH");
+      headerCell.style.outline = "2px solid "
       headerCell.innerHTML = abcd[i]
       row.appendChild(headerCell);
   }
@@ -32,7 +36,9 @@ const generateRows = () => {
   for(let i = 0; i< displayData.length; i++){
       row = table.insertRow(-1);
       for(let j = 0;j < columnCount;j++){
+
           var cell = row.insertCell(-1);
+          cell.style.outline = "2px solid "
           var nextCell = abcd[j]
           cell.innerHTML = displayData[i][nextCell]
       }

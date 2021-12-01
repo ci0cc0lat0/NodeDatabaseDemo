@@ -1,5 +1,5 @@
 body{
-    background-color:grey;
+    background-color: : ;
     font-family: fantasy;
 }
 h1{text-align: center;}
@@ -15,20 +15,20 @@ h1{text-align: center;}
 #grid-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px 0 10px 0;
+    gap: 50px;
     grid-auto-rows: minmax(100px, auto);
+    margin: auto 2% auto 2%;
 
 
 
 }
 #grid-container div{
-    border-radius:50px;
-    margin: 0 5% 0 5%
+    border-radius:20px;
 }
 .center-grid1{
 	outline-style: solid;
 	outline-color: black;
-	outline-width: 2px;
+	outline-width: 5px;
     background-color: skyblue;
 
 }
@@ -60,7 +60,7 @@ h1{text-align: center;}
 .center-grid2{
 	outline-style: solid;
 	outline-color: black;
-	outline-width: 2px;
+	outline-width: 5px;
     background-color: skyblue;
     text-align: left;
 }
@@ -77,7 +77,7 @@ h1{text-align: center;}
 .center-grid3{
 	outline-style: solid;
 	outline-color: black;
-	outline-width: 2px;
+	outline-width: 5px;
     background-color: skyblue;
 }
 .editForm form {
@@ -99,7 +99,7 @@ h1{text-align: center;}
 }
 
 .center-grid4{
-    background-color: yellow;
+    background-color: ;
     grid-column-start: 1;
     grid-column-end: 4;
     margin: 25px auto 0 auto;
