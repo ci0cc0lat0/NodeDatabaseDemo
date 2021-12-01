@@ -108,11 +108,7 @@ async function employeeSelect(){
 async function tableSelect(){
     var currentTable = document.getElementById("tableSelect").value;
     // sets name of the table to be queried
-<<<<<<< HEAD
-    //currentTable = document.querySelector('#table-input').value;
-=======
     currentTable = document.getElementById('tableSelect').value;
->>>>>>> Main
     const data = {currentTable};
     console.log(currentTable);
     // the beginning of server operations
@@ -152,24 +148,6 @@ async function selectDep(){
     setData(tableByDep);
     generateRows();
 }
-<<<<<<< HEAD
-
-async function addNewEmployee() {
-    document.getElementById("new-employee").style.display = "block";
-}
-
-async function closePopup() {
-    document.getElementById("new-employee").style.display = "none";
-}
-
-async function funcTest(){
-     document.getElementById("bruh").innerHTML = "YOU CLICKED ME!";
-     const getData = async () => {
-         await fetch('')
-         .then(response => response.json())
-         .then(data => console.log(data))
-     }
-=======
 async function employeeInsert(){
     console.log("here")
     var eid = document.querySelector("#add-eid").value
@@ -188,7 +166,6 @@ async function employeeInsert(){
         body: JSON.stringify(data)
     };
     const response  = await fetch("http://localhost:3000/employeeInsert",options)
->>>>>>> Main
 }
 async function returnData(){
     const idToEdit = document.querySelector('#edit-eid').value
@@ -203,9 +180,6 @@ async function returnData(){
     //console.log(infoToEdit[0].employee_id)
     showEdits(infoToEdit[0])
 
-<<<<<<< HEAD
-// My functions
-=======
 }
 async function sendEdit(){
     const editEmployee_id = document.querySelector("#editID")
@@ -247,6 +221,5 @@ function showEdits(info){
     document.getElementById('editPhone').value = info.phone
     document.getElementById('editAddress').value = info.address
     document.getElementById('editJobId').value = info.job_id
->>>>>>> Main
 
 }
