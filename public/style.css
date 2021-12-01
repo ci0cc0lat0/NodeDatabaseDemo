@@ -113,8 +113,22 @@ text-align: center;
 #buttonHolder{
     text-align: center;
 }
+/*
 #sendButton{
     margin: 10px auto 10px auto;
+    padding: 0 0 0 0;
+    align-content: center;
+}
+*/
+
+#sendButton{
+    margin: 15px auto 5px auto;
+    padding: 0 0 0 0;
+    align-content: center;
+}
+
+#deleteButton{
+    margin: 2px auto 10px auto;
     padding: 0 0 0 0;
     align-content: center;
 }
