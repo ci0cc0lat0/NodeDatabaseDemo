@@ -1,11 +1,17 @@
 body{
     background-color:grey;
+    font-family: fantasy;
+}
+h1{text-align: center;}
+.center-grid3 h3{
+    text-align: left
 }
 #page-container{
 	position: relative;
 	min-height: 100vh;
-    border: solid;
+
 }
+
 #grid-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -13,12 +19,17 @@ body{
     grid-auto-rows: minmax(100px, auto);
 
 
+
+}
+#grid-container div{
+    border-radius:50px;
+    margin: 0 5% 0 5%
 }
 .center-grid1{
 	outline-style: solid;
 	outline-color: black;
 	outline-width: 2px;
-    background-color: lightblue;
+    background-color: skyblue;
 
 }
 .center-grid1 div{
@@ -50,17 +61,43 @@ body{
 	outline-style: solid;
 	outline-color: black;
 	outline-width: 2px;
-    background-color: red;
+    background-color: skyblue;
     text-align: left;
-
+}
+.center-grid2 form {
+  overflow: hidden;
+}
+.center-grid2 input {
+  float: right;
+  clear: both;
+}
+.center-grid2 div {
+  margin: 10px 5% 10px 5%;
 }
 .center-grid3{
 	outline-style: solid;
 	outline-color: black;
 	outline-width: 2px;
-    background-color: green;
-
+    background-color: skyblue;
 }
+.editForm form {
+  overflow: hidden;
+}
+.editForm input {
+  float: right;
+  clear: both;
+}
+.center-grid3 div{
+    margin: 10px 5% 10px 5%;
+}
+.searchArea{
+    margin: 0px 5% 45px 5% !important;
+}
+#editButton {
+  float: right;
+  clear: both;
+}
+
 .center-grid4{
     background-color: yellow;
     grid-column-start: 1;
@@ -72,15 +109,14 @@ div#dvTable{
 margin:0 auto;
 text-align: center;
 }
-.center-grid2 form {
-  overflow: hidden;
+
+#buttonHolder{
+    text-align: center;
 }
-.center-grid2 input {
-  float: right;
-  clear: both;
-}
-.center-grid2 div {
-  margin: 0px 5% 15px 5%;
+#sendButton{
+    margin: 10px auto 10px auto;
+    padding: 0 0 0 0;
+    align-content: center;
 }
 /*
         .form-popup {

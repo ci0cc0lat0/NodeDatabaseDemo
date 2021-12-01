@@ -71,7 +71,7 @@ app.post('/EmployeeByRelation', async(req,res)=>{
     res.end()
 });
 app.post('/employeeInsert', async(req, res)=>{
-    console.log("hello")
+
     try{
     const data = req.body;
 
@@ -103,6 +103,13 @@ app.post('/employeeInsert', async(req, res)=>{
 }
 
     res.end();
+});
+app.post('/initEdit', async(req,res)=>{
+    const data = req.body
+    const eid = data.idToEdit
+    const editQuery = await pool.query(`SELECT * from employee where employee_id = ${eid}`)
+    res.json(editQuery.rows)
+    res.end()
 });
 
 //Tells where the index.html is

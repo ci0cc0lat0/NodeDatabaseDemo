@@ -159,3 +159,59 @@ async function employeeInsert(){
     };
     const response  = await fetch("http://localhost:3000/employeeInsert",options)
 }
+async function returnData(){
+    const idToEdit = document.querySelector('#edit-eid').value
+    const data = {idToEdit}
+    const options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    };
+    const response = await fetch("http://localhost:3000/initEdit",options)
+    const infoToEdit = await response.json()
+    //console.log(infoToEdit[0].employee_id)
+    showEdits(infoToEdit[0])
+
+}
+async function sendEdit(){
+    const editEmployee_id = document.querySelector("#editID")
+    const editFname = document.querySelector("#editFname")
+    const editLName = document.querySelector("#editLname")
+    const editDOB = document.querySelector("#editDOB")
+    const editEmail = document.querySelector("#editEmail")
+    const editPhone = document.querySelector("#editPhone")
+    const editAddress = document.querySelector("#editAddress")
+    const editJobId = document.querySelector("#editJobId")
+
+    const data = {editEmployee_id,editFname,editLname,editDOB,editEmail,editPhone,editAddress,editJobId}
+    const options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    };
+
+}
+
+function showEdits(info){
+    /*
+    console.log(info)
+    console.log(info.employee_id)
+    console.log(info.job_id)
+    console.log(info.fname)
+    console.log(info.lname)
+    console.log(info.dob)
+    console.log(info.email)
+    console.log(info.phone)
+    console.log(info.address)
+    console.log(info.job_id)
+    */
+    document.getElementById('editID').value = info.employee_id
+    document.getElementById('editFname').value = info.fname
+    document.getElementById('editLname').value = info.lname
+    document.getElementById('editDOB').value = info.dob
+    document.getElementById('editEmail').value = info.email
+    document.getElementById('editPhone').value = info.phone
+    document.getElementById('editAddress').value = info.address
+    document.getElementById('editJobId').value = info.job_id
+
+}

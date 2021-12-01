@@ -101,7 +101,49 @@
                         </div>
                 </div>
                 <div class="center-grid3">
+                    <h1>Edit employee</h1>
 
+
+                    <div class="searchArea">
+                        <h3> Here please the employee <br>ID of the employee recieving edits.</h3>
+                        <input type="text" placeholder="Employee Id" id="edit-eid" required >
+                        <button type="button" value="submit" class="btn" id="editButton" onclick="returnData()">Edit </button>
+                    </div>
+                    <div class="editForm">
+                        <label for="employee_id"><b>Employee ID: </b></label>
+                        <input type="text" placeholder="Employee Id" id="editID" required >
+                    </div >
+                    <div class="editForm">
+                        <label for="employee_id"><b>First name: </b></label>
+                        <input type="text" placeholder="Employee Id" id="editFname" required >
+                    </div>
+                    <div class="editForm">
+                        <label for="employee_id"><b>Last Name: </b></label>
+                        <input type="text" placeholder="Employee Id" id="editLname" required >
+                    </div>
+                    <div class="editForm">
+                        <label for="employee_id"><b>DOB: </b></label>
+                        <input type="text" placeholder="Employee Id" id="editDOB" required >
+                    </div>
+                    <div class="editForm">
+                        <label for="employee_id"><b>Email: </b></label>
+                        <input type="text" placeholder="Employee Id" id="editEmail" required >
+                    </div>
+                    <div class="editForm">
+                        <label for="employee_id"><b>Phone Number: </b></label>
+                        <input type="text" placeholder="Employee Id" id="editPhone" required >
+                    </div>
+                    <div class="editForm">
+                        <label for="employee_id"><b>Address: </b></label>
+                        <input type="text" placeholder="Employee Id" id="editAddress" required >
+                    </div>
+                    <div class="editForm">
+                        <label for="employee_id"><b>Job ID: </b></label>
+                        <input type="text" placeholder="Employee Id" id="editJobId" required >
+                    </div>
+                    <div id="buttonHolder">
+                        <button id="sendButton" type="button" name="SendEdits" onClick="sendEdit()">Send Edits</button>
+                    </div>
                 </div>
                 <div class="center-grid4">
                         <div id="dvTable">
