@@ -1,4 +1,142 @@
+<<<<<<< HEAD
 
+=======
+body{
+    background-color:  rgb(230,250,255) ;
+    font-family: fantasy;
+}
+h1{text-align: center;}
+.center-grid3 h3{
+    text-align: left
+}
+#page-container{
+	position: relative;
+	min-height: 100vh;
+
+}
+
+#grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    grid-auto-rows: minmax(100px, auto);
+    margin: auto 2% auto 2%;
+
+
+
+}
+#grid-container div{
+    border-radius:20px;
+}
+.center-grid1{
+	outline-style: solid;
+	outline-color: black;
+	outline-width: 5px;
+    background-color: skyblue;
+
+}
+.center-grid1 div{
+    margin: 15px 5% 0 5%;
+}
+.center-grid1 button {
+  float: right;
+  clear: both;
+}
+#ebd select{
+    width: 50%;
+}
+#ebd input{
+    width: 50%;
+}
+#ts select{
+    width: 50%;
+}
+#ts input{
+    width: 50%;
+}
+#es input{
+    width: 25%;
+}
+#es select{
+    width: 25%;
+}
+.center-grid2{
+	outline-style: solid;
+	outline-color: black;
+	outline-width: 5px;
+    background-color: skyblue;
+    text-align: left;
+}
+.center-grid2 form {
+  overflow: hidden;
+}
+.center-grid2 input {
+  float: right;
+  clear: both;
+}
+.center-grid2 div {
+  margin: 10px 5% 10px 5%;
+}
+.center-grid3{
+	outline-style: solid;
+	outline-color: black;
+	outline-width: 5px;
+    background-color: skyblue;
+}
+.editForm form {
+  overflow: hidden;
+}
+.editForm input {
+  float: right;
+  clear: both;
+}
+.center-grid3 div{
+    margin: 10px 5% 10px 5%;
+}
+.searchArea{
+    margin: 0px 5% 45px 5% !important;
+}
+#editButton {
+  float: right;
+  clear: both;
+}
+
+.center-grid4{
+    background-color: ;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin: 25px auto 0 auto;
+    padding: 0 0 0 0;
+}
+div#dvTable{
+margin:0 auto;
+text-align: center;
+}
+
+#buttonHolder{
+    text-align: center;
+}
+/*
+#sendButton{
+    margin: 10px auto 10px auto;
+    padding: 0 0 0 0;
+    align-content: center;
+}
+*/
+
+#sendButton{
+    margin: 15px auto 5px auto;
+    padding: 0 0 0 0;
+    align-content: center;
+}
+
+#deleteButton{
+    margin: 2px auto 10px auto;
+    padding: 0 0 0 0;
+    align-content: center;
+}
+/*
+>>>>>>> Main
         .form-popup {
             text-align: center;
             display: none;
@@ -8,7 +146,11 @@
 
             z-index: 9;
         }
+<<<<<<< HEAD
         /*
+=======
+
+>>>>>>> Main
         .add-button {
             background-color: #555;
             color: white;
@@ -21,7 +163,11 @@
             right: 28px;
             width: 280px;
         }
+<<<<<<< HEAD
         */
+=======
+
+>>>>>>> Main
         .form-container{
             margin: 0 auto 0 auto;
             padding: 0 0 0 0;
@@ -30,6 +176,10 @@
             border: solid;
             border-color: black;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> Main
         .form-container input[type=text], .form-container input[type=password] {
             text-align: center;
             width: 90%;
@@ -57,4 +207,9 @@
         }
         .form-container .cancel {
             background-color: red;
+<<<<<<< HEAD
         }
+=======
+        }
+*/
+>>>>>>> Main
