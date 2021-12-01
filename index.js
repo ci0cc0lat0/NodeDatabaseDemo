@@ -1,3 +1,4 @@
+// This is the the main
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -38,13 +39,13 @@ app.post('/singleEmployee', async(req,res)=>{
         console.log(e.message)
     }
 })
-app.post('/dep', async(req,res)=>{
+app.post('/depSelect', async(req,res)=>{
     try{
         const data = req.body
         const employeeByDep = data.depSelect
         if (employeeByDep >=0 ){
             console.log(`select * from employee join job ON employee.job_id = job.job_id where dep_id = ${employeeByDep};`)
-            const depQuery = await pool.query(`select employee.* from employee join job ON employee.job_id = job.job_id where dep_id = ${employeeByDep};`)
+            const depQuery = await pool.query(`select * from employee join job ON employee.job_id = job.job_id where dep_id = ${employeeByDep};`)
             res.json(depQuery.rows)
             res.end()
         }
@@ -58,6 +59,16 @@ app.post('/dep', async(req,res)=>{
         console.log(e.message)
     }
 })
+app.post('/EmployeeByRelation', async(req,res)=>{
+
+    const data = req.body;
+    const employeeChoice = data.employeeID
+    const relationChoice = data.tableChoice;
+    console.log(`select employee.*, ${relationChoice}.* from employee join job ON employee.job_id = job.job_id join benefit ON job.benefit_code = benefit.benefit_code join salary ON job.salary_id = salary.salary_id join department ON job.dep_id = department.dep_id join payment ON employee.employee_id = payment.employee_id where employee.employee_id = ${employeeChoice};`)
+    const specificRelationQuery = await pool.query(`select employee.*, ${relationChoice}.* from employee join job ON employee.job_id = job.job_id join benefit ON job.benefit_code = benefit.benefit_code join salary ON job.salary_id = salary.salary_id join department ON job.dep_id = department.dep_id join payment ON employee.employee_id = payment.employee_id where employee.employee_id = ${employeeChoice};`)
+    res.json(specificRelationQuery.rows)
+    res.end()
+});
 // Nothing to worry about
 app.get('/demos', async(req, res)=>{
   try{
