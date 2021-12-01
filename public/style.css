@@ -1,0 +1,146 @@
+body{
+    background-color:grey;
+}
+#page-container{
+	position: relative;
+	min-height: 100vh;
+    border: solid;
+}
+#grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 0 10px 0;
+    grid-auto-rows: minmax(100px, auto);
+
+
+}
+.center-grid1{
+	outline-style: solid;
+	outline-color: black;
+	outline-width: 2px;
+    background-color: lightblue;
+
+}
+.center-grid1 div{
+    margin: 15px 5% 0 5%;
+}
+.center-grid1 button {
+  float: right;
+  clear: both;
+}
+#ebd select{
+    width: 50%;
+}
+#ebd input{
+    width: 50%;
+}
+#ts select{
+    width: 50%;
+}
+#ts input{
+    width: 50%;
+}
+#es input{
+    width: 25%;
+}
+#es select{
+    width: 25%;
+}
+.center-grid2{
+	outline-style: solid;
+	outline-color: black;
+	outline-width: 2px;
+    background-color: red;
+    text-align: left;
+
+}
+.center-grid3{
+	outline-style: solid;
+	outline-color: black;
+	outline-width: 2px;
+    background-color: green;
+
+}
+.center-grid4{
+    background-color: yellow;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin: 25px auto 0 auto;
+    padding: 0 0 0 0;
+}
+div#dvTable{
+margin:0 auto;
+text-align: center;
+}
+.center-grid2 form {
+  overflow: hidden;
+}
+.center-grid2 input {
+  float: right;
+  clear: both;
+}
+.center-grid2 div {
+  margin: 0px 5% 15px 5%;
+}
+/*
+        .form-popup {
+            text-align: center;
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+
+            z-index: 9;
+        }
+
+        .add-button {
+            background-color: #555;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;
+        }
+
+        .form-container{
+            margin: 0 auto 0 auto;
+            padding: 0 0 0 0;
+            width: 35%;
+            background-color: white;
+            border: solid;
+            border-color: black;
+        }
+
+        .form-container input[type=text], .form-container input[type=password] {
+            text-align: center;
+            width: 90%;
+            padding: 5px;
+            margin: 5px 0 10px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+        .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+        .form-container .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom:10px;
+            opacity: 0.8;
+        }
+        .form-container .btn:hover, .open-button:hover {
+            opacity: 1;
+        }
+        .form-container .cancel {
+            background-color: red;
+        }
+*/

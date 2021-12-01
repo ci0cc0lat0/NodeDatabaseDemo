@@ -121,7 +121,7 @@ async function employeeSelect(){
 }
 async function tableSelect(){
     // sets name of the table to be queried
-    currentTable = document.querySelector('#table-input').value;
+    currentTable = document.querySelector('#tableSelect').value;
     const data = {currentTable};
     // the beginning of server operations
     const options = {
@@ -132,8 +132,6 @@ async function tableSelect(){
     // response here gets info back from the server, in this case, the actual query
     // from the other side
     const response = await fetch("http://localhost:3000/select",options);
-    // sets h2 block to the name of the table being queried
-    document.getElementById("currentTableName").innerHTML = currentTable
     // assigns the response into json and sets it equal to the variable that will be put through setDemos
     const newTable = await response.json()
     setDemos(newTable);
