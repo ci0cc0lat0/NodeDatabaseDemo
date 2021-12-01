@@ -69,35 +69,7 @@ app.post('/EmployeeByRelation', async(req,res)=>{
     res.json(specificRelationQuery.rows)
     res.end()
 });
-// Nothing to worry about
-app.get('/demos', async(req, res)=>{
-  try{
-    const allDemos = await pool.query(`SELECT * FROM demo`);
-    res.json(allDemos.rows);
-    // console.log(allDemos);
-  } catch(err){
-    console.log(err.message);
-  }
-});
-app.get('/test', async(req, res)=>{
-  try{
-    const allDemos = await pool.query(`SELECT * FROM test`);
-    res.json(allDemos.rows);
-    // console.log(allDemos);
-  } catch(err){
-    console.log(err.message);
-  }
-});
-app.get("/demos/:id", async(req, res)=>{
-    try {
-        const {tableName} = req.body
-        const differentTable = await pool.query(`SELECT * FROM $1`,[tableName]);
-        console.log("hello??")
-        res.json(differentTable.rows);
-    } catch (e) {
-        console.log(err.message);
-    }
-});
+
 
 //Tells where the index.html is
 app.get('*', function(req, res) {
