@@ -145,18 +145,43 @@ app.post('/finalEdit', async(req,res)=>{
     const feAddress= data.editAddress
     const feJobId= data.editJobId
     try{
+    const salaryData  = await pool.query(`select salary_id from job where job_id = ${feJobId};`)
+    fs.appendFileSync('server.sql',`select benefit_code from job where job_id = ${feJobId}; \n`);
 
+    const benefitData  = await pool.query(`select benefit_code from job where job_id = ${feJobId};`)
+    fs.appendFileSync('server.sql',`select benefit_code from job where job_id = ${feJobId}; \n`);
+
+    const newS_id = salaryData.rows[0].salary_id
+    const newB_code = benefitData.rows[0].benefit_code
 
     console.log(`UPDATE employee SET employee_id = ${feEmployee_id},fname='${feFname}',lname='${feLname}'dob='${feDOB}',email='${feEmail}',phone= '${fePhone}',address='${feAddress}',job_id=${feJobId} WHERE employee_id = ${edForLater};  `)
     const start = await pool.query(`BEGIN TRANSACTION;`)
-    const update= await pool.query(`UPDATE employee SET employee_id = ${feEmployee_id},fname='${feFname}',lname='${feLname}',dob='${feDOB}',email='${feEmail}',phone= '${fePhone}',address='${feAddress}',job_id=${feJobId} WHERE employee_id = ${edForLater} `)
+    const update= await pool.query(`UPDATE employee SET employee_id = ${feEmployee_id},fname='${feFname}',lname='${feLname}',dob='${feDOB}',email='${feEmail}',phone= '${fePhone}',address='${feAddress}',job_id=${feJobId} WHERE employee_id = ${edForLater}; `)
+    const updatep= await pool.query(`UPDATE payment SET employee_id = ${feEmployee_id},benefit_code=${newB_code},salary_id=${newS_id} WHERE employee_id = ${edForLater};`)
     const end = await pool.query(`COMMIT TRANSACTION;`)
 }catch(e){
     console.log(e.message)
 }
 
 });
+app.post('/deleteEmployee', async(req,res)=>{
+  try{
+  const data = req.body
+  const eid = data.idToDelete
+  const deleteE = await pool.query(`DELETE FROM employee WHERE employee_id = ${eid};`)
+  fs.appendFileSync('server.sql',`DELETE FROM employee WHERE employee_id = ${eid}; \n`);
 
+  const deleteP = await pool.query(`DELETE FROM payment WHERE employee_id = ${eid};`)
+  fs.appendFileSync('server.sql',`DELETE FROM payment WHERE employee_id = ${eid}; \n`);
+
+  console.log("Delete Successful")
+  res.json(deleteE)
+  res.end();
+}catch(e){
+  console.log(e.message)
+  res.end();
+}
+})
 //Tells where the index.html is
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname + '/public/index.html'));

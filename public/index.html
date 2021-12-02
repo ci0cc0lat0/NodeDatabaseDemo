@@ -102,8 +102,10 @@
                                     <input type="text" placeholder="Job Id" required id="add-jid">
                                 </div>
 
+                            <div class="addButtonClass">
+                                <button type="button" value="submit" class="btn" id="employeeAddButton" onclick="employeeInsert()">Add</button>
+                            </div>
 
-                            <button type="button" value="submit" class="btn" id="employeeAddButton" onclick="employeeInsert()">Add</button>
                         </div>
                 </div>
                 <div class="center-grid3">
@@ -114,44 +116,45 @@
                         <h3> Here please the employee <br>ID of the employee recieving edits.</h3>
                         <input type="text" placeholder="Employee Id" id="edit-eid" required >
                         <button type="button" value="submit" class="btn" id="editButton" onclick="returnData()">Edit </button>
+                        <button id="deleteButton" type="button" name="DeleteEmployee" onclick="deleteEmployee()">Delete Employee</button>
                     </div>
                     <div class="editForm">
                         <label for="employee_id"><b>Employee ID: </b></label>
-                        <input type="text" placeholder="Employee Id" id="editID" required >
+                        <input type="text" placeholder="" id="editID" required >
                     </div >
                     <div class="editForm">
                         <label for="employee_id"><b>First name: </b></label>
-                        <input type="text" placeholder="Employee Id" id="editFname" required >
+                        <input type="text" placeholder="" id="editFname" required >
                     </div>
                     <div class="editForm">
                         <label for="employee_id"><b>Last Name: </b></label>
-                        <input type="text" placeholder="Employee Id" id="editLname" required >
+                        <input type="text" placeholder="" id="editLname" required >
                     </div>
                     <div class="editForm">
                         <label for="employee_id"><b>DOB: </b></label>
-                        <input type="text" placeholder="Employee Id" id="editDOB" required >
+                        <input type="text" placeholder="" id="editDOB" required >
                     </div>
                     <div class="editForm">
                         <label for="employee_id"><b>Email: </b></label>
-                        <input type="text" placeholder="Employee Id" id="editEmail" required >
+                        <input type="text" placeholder="" id="editEmail" required >
                     </div>
                     <div class="editForm">
                         <label for="employee_id"><b>Phone Number: </b></label>
-                        <input type="text" placeholder="Employee Id" id="editPhone" required >
+                        <input type="text" placeholder="" id="editPhone" required >
                     </div>
                     <div class="editForm">
                         <label for="employee_id"><b>Address: </b></label>
-                        <input type="text" placeholder="Employee Id" id="editAddress" required >
+                        <input type="text" placeholder="" id="editAddress" required >
                     </div>
                     <div class="editForm">
                         <label for="employee_id"><b>Job ID: </b></label>
-                        <input type="text" placeholder="Employee Id" id="editJobId" required >
+                        <input type="text" placeholder="" id="editJobId" required >
                     </div>
                     <div id="buttonHolder">
                         <button id="sendButton" type="button" name="SendEdits" onClick="sendEdit()">Send Edits</button>
                     </div>
-                    <div id="buttonHolder"> 
-                        <button id="deleteButton" type="button" name="DeleteEmployee" onclick="deleteEmployee()">Delete Employee</button>
+                    <div id="buttonHolder">
+
                     </div>
                 </div>
                 <div class="center-grid4">

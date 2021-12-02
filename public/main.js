@@ -192,7 +192,7 @@ async function sendEdit(){
     const editAddress = document.querySelector("#editAddress").value
     const editJobId = document.querySelector("#editJobId").value
 
-    
+
     const data = {editEmployee_id,editFname,editLname,editDOB,editEmail,editPhone,editAddress,editJobId}
     const options = {
         method: 'POST',
@@ -202,7 +202,27 @@ async function sendEdit(){
     const response = await fetch("http://localhost:3000/finalEdit",options)
 
 }
+async function deleteEmployee(){
+  var con =  confirm("Are you sure you want to delete this employee?")
+  if(con==true){
+  const idToDelete = document.querySelector('#edit-eid').value
+  const data  = {idToDelete}
+  const options = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+  };
+  const response = await fetch("http://localhost:3000/deleteEmployee",options)
+  const deleteRes = await response.json()
+  if (deleteRes.rowCount == 0){
+    alert("No Employee Deleted! \nPerhaps the employee does not exist or the I is wrong.")
+  }else{
+    alert("Employee Deleted")
+  }
+  }
+  else{}
 
+}
 function showEdits(info){
     /*
     console.log(info)
