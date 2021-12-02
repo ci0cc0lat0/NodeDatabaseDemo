@@ -182,21 +182,24 @@ async function returnData(){
 
 }
 async function sendEdit(){
-    const editEmployee_id = document.querySelector("#editID")
-    const editFname = document.querySelector("#editFname")
-    const editLName = document.querySelector("#editLname")
-    const editDOB = document.querySelector("#editDOB")
-    const editEmail = document.querySelector("#editEmail")
-    const editPhone = document.querySelector("#editPhone")
-    const editAddress = document.querySelector("#editAddress")
-    const editJobId = document.querySelector("#editJobId")
+    console.log("hello")
+    const editEmployee_id = document.querySelector("#editID").value
+    const editFname = document.querySelector("#editFname").value
+    const editLname = document.querySelector("#editLname").value
+    const editDOB = document.querySelector("#editDOB").value
+    const editEmail = document.querySelector("#editEmail").value
+    const editPhone = document.querySelector("#editPhone").value
+    const editAddress = document.querySelector("#editAddress").value
+    const editJobId = document.querySelector("#editJobId").value
 
+    
     const data = {editEmployee_id,editFname,editLname,editDOB,editEmail,editPhone,editAddress,editJobId}
     const options = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
     };
+    const response = await fetch("http://localhost:3000/finalEdit",options)
 
 }
 
