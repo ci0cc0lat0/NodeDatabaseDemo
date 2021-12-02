@@ -226,3 +226,16 @@ function showEdits(info){
     document.getElementById('editJobId').value = info.job_id
 
 }
+
+async function deleteEmployee(){
+    console.log("hello")
+
+    //const data = {deleteEmployee_id,deleteFname,deleteLname,deleteDOB,deleteEmail,deletePhone,deleteAddress,deleteJobId}
+    const options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    };
+    const response = await fetch("http://localhost:3000/finalEdit",options)
+
+}
