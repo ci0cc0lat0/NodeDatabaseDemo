@@ -189,4 +189,61 @@ select benefit_code from job where job_id = 15;
 select employee.*, benefit.* from employee join job ON employee.job_id = job.job_id join benefit ON job.benefit_code = benefit.benefit_code join salary ON job.salary_id = salary.salary_id join department ON job.dep_id = department.dep_id join payment ON employee.employee_id = payment.employee_id where employee.employee_id = 144517; 
 select benefit_code from job where job_id = 8; 
 select benefit_code from job where job_id = 8; 
+<<<<<<< HEAD
+>>>>>>> Main
+=======
+select * from employee join job ON employee.job_id = job.job_id where dep_id = 3; 
+select * from employee join job ON employee.job_id = job.job_id where dep_id = 1; 
+Select * from employee 
+select * from employee join job ON employee.job_id = job.job_id where dep_id = 0; 
+select * from employee join job ON employee.job_id = job.job_id where dep_id = 1; 
+select * from employee join job ON employee.job_id = job.job_id where dep_id = 2; 
+select * from employee join job ON employee.job_id = job.job_id where dep_id = 3; 
+select * from employee join job ON employee.job_id = job.job_id where dep_id = 3; 
+select benefit_code from job where job_id = 5; 
+select benefit_code from job where job_id = 5; 
+BEGIN TRANSACTION; 
+DELETE FROM employee WHERE employee_id = 144517; 
+DELETE FROM payment WHERE employee_id = 144517; 
+select benefit_code from job where job_id = 5; 
+select benefit_code from job where job_id = 5; 
+BEGIN TRANSACTION; 
+INSERT INTO employee VALUES (144517, 'Anthony','Ciocco','08301999','test@test.com','99111','1111 St.Street',5); 
+INSERT INTO payment VALUES (144517,2,0,0,0,0.153,0,0); 
+COMMIT TRANSACTION; 
+Select * from payment; 
+Select * from payment; 
+Select * from payment; 
+Select * from payment; 
+Select * from employee; 
+Select * from employee; 
+Select * from job; 
+Select * from salary; 
+Select * from job; 
+Select * from department; 
+Select * from benefit; 
+Select * from salary; 
+Select * from employee 
+DELETE FROM employee WHERE employee_id = 144517; 
+DELETE FROM payment WHERE employee_id = 144517; 
+Select * from employee 
+select * from employee join job ON employee.job_id = job.job_id where dep_id = 1; 
+select * from employee join job ON employee.job_id = job.job_id where dep_id = 6; 
+Select * from employee 
+SELECT * from employee where employee_id = 27110;
+select employee.*, salary.* from employee join job ON employee.job_id = job.job_id join benefit ON job.benefit_code = benefit.benefit_code join salary ON job.salary_id = salary.salary_id join department ON job.dep_id = department.dep_id join payment ON employee.employee_id = payment.employee_id where employee.employee_id = 27110; 
+select employee.*, payment.* from employee join job ON employee.job_id = job.job_id join benefit ON job.benefit_code = benefit.benefit_code join salary ON job.salary_id = salary.salary_id join department ON job.dep_id = department.dep_id join payment ON employee.employee_id = payment.employee_id where employee.employee_id = 27110; 
+Select * from salary; 
+Select * from payment; 
+Select * from payment; 
+Select * from salary; 
+Select * from payment; 
+Select * from payment; 
+Select * from payment; 
+Select * from payment; 
+Select * from payment; 
+Select * from payment; 
+Select * from payment; 
+Select * from employee 
+select employee.*, payment.* from employee join job ON employee.job_id = job.job_id join benefit ON job.benefit_code = benefit.benefit_code join salary ON job.salary_id = salary.salary_id join department ON job.dep_id = department.dep_id join payment ON employee.employee_id = payment.employee_id where employee.employee_id = 27110; 
 >>>>>>> Main
