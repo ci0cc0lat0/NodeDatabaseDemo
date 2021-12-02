@@ -182,6 +182,18 @@ app.post('/deleteEmployee', async(req,res)=>{
   res.end();
 }
 })
+app.get('/salary',async(req,res)=>{
+  const salary = await pool.query(`select employee_id,payment.salary_id,hourly_salary_amount,payment.work_hour from payment join salary on payment.salary_id = salary.salary_id;`)
+  for(let i = 0;i<salary.rowCount;i++){
+    let eid = salary.rows[i].employee_id
+    let sid = salary.rows[i].salary_id
+    let perhour = salary.rows[i].hourly_salary_amount
+    let hourAmount = salary.rows[i].work_hour
+    let update = await pool.query(`UPDATE payment SET monthly_total = ${perhour}*${hourAmount} WHERE employee_id = ${eid};`)
+  }
+  console.log(salary.rows[0].employee_id)
+  console.log(salary.rowCount)
+})
 //Tells where the index.html is
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname + '/public/index.html'));
