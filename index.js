@@ -167,6 +167,32 @@ app.listen(port, ()=>{
   console.log(`server has started on port ${port}`);
 });
 
+app.delete('/deleteEmployee', function(req, res) {
+    /*
+        const data = req.body
+        const deleteEmployee_id = data.deleteEmployee_id
+        const deleteFname = data.deleteFname
+        const deleteLname = data.deleteLname
+        const deleteDOB= data.deleteDOB
+        const deleteEmail= data.deleteEmail
+        const deletePhone= data.deletePhone
+        const deleteAddress= data.deleteAddress
+        const deleteJobId= data.deleteJobId
+
+    try{
+        const deleteEmployee = pool.query(`DELETE FROM employee WHERE employee_id = ${employee_id}`)
+
+        console.log(`UPDATE employee SET employee_id = ${deleteEmployee_id},fname='${deleteFname}',lname='${deleteLname}'dob='${deleteDOB}',email='${deleteEmail}',phone= '${deletePhone}',address='${deleteAddress}',job_id=${deleteJobId} WHERE employee_id = ${employee_id};  `)
+        const start = pool.query(`BEGIN TRANSACTION;`)
+        const update= pool.query(`UPDATE employee SET employee_id = ${deleteEmployee_id},fname='${deleteFname}',lname='${deleteLname}'dob='${deleteDOB}',email='${deleteEmail}',phone= '${deletePhone}',address='${deleteAddress}',job_id=${deleteJobId} WHERE employee_id = ${employee_id} `)
+        const end = pool.query(`COMMIT TRANSACTION;`)
+    }catch(e){
+        console.log(e.message)
+    }
+    */
+   const deleteEmp = await pool.query(`DELETE FROM employee WHERE employee_id = ${employee_id}`)
+});
+
 
 
 
