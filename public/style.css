@@ -99,7 +99,6 @@ h1{text-align: center;}
 }
 
 .center-grid4{
-    background-color: ;
     grid-column-start: 1;
     grid-column-end: 4;
     margin: 25px auto 0 auto;
