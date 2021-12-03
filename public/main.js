@@ -157,6 +157,11 @@ async function employeeInsert(){
     var address = document.querySelector("#add-address").value
     var jid = document.querySelector("#add-jid").value
 
+    if( parseInt(jid) >= 18 || parseInt(jid) < 0){
+      alert("The job ID you entered is invalid, please try again.")
+    }
+    else{
+
     const data = {eid,fname,lname,dob,email,phonenum,address,jid}
     const options = {
         method: 'POST',
@@ -164,6 +169,7 @@ async function employeeInsert(){
         body: JSON.stringify(data)
     };
     const response  = await fetch("http://localhost:3000/employeeInsert",options)
+    }
 }
 async function returnData(){
     const idToEdit = document.querySelector('#edit-eid').value

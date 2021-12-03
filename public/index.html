@@ -64,53 +64,54 @@
                     <h1>Add New Employee</h1>
                     <hr>
                     <div>
-                        <form class="form-container">
+                        <form class="form-container" onsubmit="return false">
 
                                 <div>
                                     <label for="employee_id"><b>Employee ID: </b></label>
-                                    <input type="text" placeholder="Employee Id" id="add-eid" required >
+                                    <input type="text" placeholder="Employee Id" id="add-eid" required="required" >
                                 </div>
 
                                 <div>
                                     <label for="fname"><b>First Name: </b></label>
-                                    <input type="text" placeholder="First Name" required id="add-fname">
+                                    <input type="text" placeholder="First Name" required="required" id="add-fname">
                                 </div>
 
                                 <div>
                                     <label for="lname"><b>Last Name: </b></label>
-                                    <input type="text" placeholder="Last Name" required id="add-lname">
+                                    <input type="text" placeholder="Last Name" required="required" id="add-lname">
                                 </div>
 
                                 <div>
                                     <label for="dob"><b>Date of Birth: </b></label>
-                                    <input type="text" placeholder="Date Of Birth" required id="add-dob">
+                                    <input type="text" placeholder="Date Of Birth" required="required" id="add-dob">
                                 </div>
                                 <div>
                                     <label for="email"><b>Email: </b></label>
-                                    <input type="text" placeholder="Email" required id="add-email">
+                                    <input type="text" placeholder="Email" required="required" id="add-email">
                                 </div>
                                 <div>
                                     <label for="phone"><b>Phone Number: </b></label>
-                                    <input type="text" placeholder="Phone Number" required id="add-phonenum">
+                                    <input type="text" placeholder="Phone Number" required="required" id="add-phonenum">
                                 </div>
                                 <div>
                                     <label for="address"><b>Address: </b></label>
-                                    <input type="text" placeholder="Address" required id="add-address">
+                                    <input type="text" placeholder="Address" required="required" id="add-address">
                                 </div>
 
                                 <div>
                                     <label for="job_id"><b>Job ID: </b></label>
-                                    <input type="text" placeholder="Job Id" required id="add-jid">
+                                    <input type="text" placeholder="Job Id" required="required" id="add-jid">
                                 </div>
 
                             <div class="addButtonClass">
-                                <button type="button" value="submit" class="btn" id="employeeAddButton" onclick="employeeInsert()">Add</button>
+                                <input type="submit" value="Add" class="btn" id="employeeAddButton"  onclick="employeeInsert()">
                             </div>
+                          </form>
 
                         </div>
                 </div>
                 <div class="center-grid3">
-                    <h1>Edit employee</h1>
+                    <h1>Edit Employee</h1>
                     <hr>
 
                     <div class="searchArea">

@@ -1,22 +1,16 @@
-To run the server, in the root directory open a terminal and run 'npx nodemon index.js'
-next, look up localhost:3000 on the browser
+Hopefully everything goes off without a hitch.
+## To run the files all we really had to do was install nodemon. I believe express and cors are baked into npm.
 
-The default table should have 5 rows
-The delete and edit buttons do nothing.
+sudo apt-get install nodemon
 
-if you type in 'demo' and hit 'Table select' nothing should happen on the website, but the terminal should update with a new 'select all' query
-if you type in 'test' and hit 'Table select' the  table should change to undefined and have 3 rows. Repeating the step above should return it to normal
+We run the project inside the root directory with these commands
 
-I am looking for a way to display all of the attributes in a table in the top.
-Later this will be reduced down to the attributes we, the user want to search for.
+npx nodemon index.js
 
-The way main.js and index.js work is through passing request and responses to each other.
-Main.js activates on client input and talks to the server ( the server started with 'npx nodemon index.js' ) and does actions based on that.
+Then on a browser, we load up localhost:3000 and you should be directed to the page.
 
-The hardest part here is getting the HTML we want with the info the server gives back to us. This however can be slightly ignored because i think if we can hammer out what we get from the terminal, then we will have the back end done ( as it is more important)
+Hopefully That is all that is needed
+Any other bugs or quirks of running the server, message Anthony Ciocco 1600875, dbs018 for information.
 
-My goals for this are as follows:
-    Be able to see all tables available
-    Be able to insert, update those tables.
-    Search for someone's INFO based of their employee_id
-    I think if we can get these 3 things down, minimum, then we are good. 
+Link to the video:
+https://www.youtube.com/watch?v=AleFXVttZ4E
