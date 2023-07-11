@@ -1,6 +1,6 @@
 # Restful API used to access database
 <img src="node.png" />
-## What is this
+# What is this
 
 This project what part of my databases class at UH where we were tasked with designing a relational database from the ground up, create and a front end UI for it and conenct it to the backend through the rest API. Full updates of the table can be easily made through the UI such as viewing employee information, adding a new employee, and seeing other HR related data in said relation to their role.
 
